@@ -27,11 +27,11 @@ add_action('init', function() {
 
 function nobi_add_utm_fields($fields){
 
-    $utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : $_COOKIE['utm_source'];
-    $utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : $_COOKIE['utm_campaign'];
-    $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : $_COOKIE['utm_content'];
-    $utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : $_COOKIE['utm_medium'];
-    $utm_term = isset($_GET['utm_term']) ? $_GET['utm_term'] : $_COOKIE['utm_term'];
+    $utm_source = isset($_GET['utm_source']) ? sanitize_text_field($_GET['utm_source']) : sanitize_text_field($_COOKIE['utm_source']);
+    $utm_campaign = isset($_GET['utm_campaign']) ? sanitize_text_field($_GET['utm_campaign']) : sanitize_text_field($_COOKIE['utm_campaign']);
+    $utm_content = isset($_GET['utm_content']) ? sanitize_text_field($_GET['utm_content']) : sanitize_text_field($_COOKIE['utm_content']);
+    $utm_medium = isset($_GET['utm_medium']) ? sanitize_text_field($_GET['utm_medium']) : sanitize_text_field($_COOKIE['utm_medium']);
+    $utm_term = isset($_GET['utm_term']) ? sanitize_text_field($_GET['utm_term']) : sanitize_text_field($_COOKIE['utm_term']);
 
     $params = array_filter(array(
         'utm_source' => $utm_source,
