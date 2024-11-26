@@ -4,7 +4,7 @@ Donate link:
 Tags: Nobita, Nobita.Pro, Nobita.ph, Ecrm, Contact Form 7 To Lead
 Requires at least: 6.5
 Tested up to: 6.5
-Requires PHP:5.3
+Requires PHP: 5.3
 Stable tag: 1.0.93
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
