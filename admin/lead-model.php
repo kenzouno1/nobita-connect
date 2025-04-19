@@ -25,6 +25,8 @@ class NobitaLead
 
     public function to_json()
     {
+        $options = get_option('nobi_connect_options');
+
         $modelKeys = array("fullName", "phone", "address", "email", "birthdate", "firstName"
             , "lastName", "name", "Email", "Name", "Birthdate", "FullName", "Phone", "Address");
 
@@ -45,6 +47,10 @@ class NobitaLead
         $extra = array_filter($this->data, function ($value, $key) use ($modelKeys) {
             return isset($value) && $value != "" && !in_array($key, $modelKeys);
         }, ARRAY_FILTER_USE_BOTH);
+
+        if (isset($_COOKIE['nobi_link']) && isset($options["use_access_link"]) && $options["use_access_link"] == 1) {
+            $extra["access_link"] = $_COOKIE['nobi_link'];
+        }
 
         $data = array(
             "model" => $model,

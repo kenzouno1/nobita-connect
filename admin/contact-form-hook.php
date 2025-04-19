@@ -6,28 +6,8 @@ add_action('wpcf7_save_contact_form', 'nobi_save_config_contact_form', 10, 3);
 add_action('wpcf7_form_hidden_fields', 'nobi_add_utm_fields', 10, 1);
 
 
-add_action('init', function () {
-    if (isset($_GET['utm_source'])) {
-        setcookie('utm_source', sanitize_text_field($_GET['utm_source']), strtotime('+7 day'));
-    }
-    if (isset($_GET['utm_campaign'])) {
-        setcookie('utm_campaign', sanitize_text_field($_GET['utm_campaign']), strtotime('+7 day'));
-    }
-    if (isset($_GET['utm_medium'])) {
-        setcookie('utm_medium', sanitize_text_field($_GET['utm_medium']), strtotime('+7 day'));
-    }
-    if (isset($_GET['utm_content'])) {
-        setcookie('utm_content', sanitize_text_field($_GET['utm_content']), strtotime('+7 day'));
-    }
-    if (isset($_GET['utm_term'])) {
-        setcookie('utm_term', sanitize_text_field($_GET['utm_term']), strtotime('+7 day'));
-    }
-});
-
-
 function load_utm_value($name)
 {
-
     if (isset($_GET[$name])) {
         return sanitize_text_field($_GET[$name]);
     } else if (isset($_COOKIE[$name])) {
@@ -127,7 +107,7 @@ function nobi_santize_cf7_form($fields)
 function nobi_add_cf7_panel($panels)
 {
     $panels['nobita-panel'] = array(
-        'title' => __('Nobita', 'nobi_connect'),
+        'title' => __('Nobi', 'nobi_connect'),
         'callback' =>
             'nobi_cf7_config'
         ,
@@ -172,7 +152,7 @@ function nobi_cf7_fields()
 function nobi_cf7_config($post)
 {
 
-    $description = __("Thiết lập đổ lead về nobita", 'nobi_connect');
+    $description = __("Thiết lập đổ lead về Nobi", 'nobi_connect');
 
     $formTags = $post->collect_mail_tags();
 
@@ -191,9 +171,9 @@ function nobi_cf7_config($post)
 
     <fieldset>
         <h3>Thiết lập lưu dữ liệu</h3>
-        <p>Thiết lập liên kết các trường trong form với nobita.<br />
+        <p>Thiết lập liên kết các trường trong form với Nobi.<br />
             Các trường được thiết lập trong bảng này sẽ được lưu vào thông tin lead, các trường khác sẽ tự động lưu vào các
-            trường mở rộng trên nobita.
+            trường mở rộng trên Nobi.
             <br /> Để trống trường <strong>Họ và Tên</strong> và điền thông tin vào trường <strong>Họ</strong>,
             <strong>Tên</strong> nếu form có trường <strong>Họ</strong> và trường Tên</strong>
             <br /> Để trống 2 trường <strong>Họ</strong>,<strong>Tên</strong> nếu form chỉ có 1 ô Họ Tên

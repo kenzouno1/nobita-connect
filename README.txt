@@ -1,19 +1,19 @@
-=== Nobita Connect ===
+=== Nobi Connect ===
 Contributors: 
 Donate link: 
-Tags: Nobita, Nobita.Pro, Nobita.ph, Ecrm, Contact Form 7 To Lead
+Tags: Nobita, Nobi.Pro, Nobi.ph, Ecrm, Contact Form 7 To Lead
 Requires at least: 6.5
 Tested up to: 6.5
 Requires PHP: 5.3
-Stable tag: 1.0.93
+Stable tag: 1.0.94
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Plugin kết nối giữa wordpress với Nobita
+Plugin kết nối giữa wordpress với Nobi Pro
 
 == Description ==
 
-Hỗ trợ chuyển thông tin khi khách để lại thông tin trên Contact Form 7 , khách đặt hàng trên Woocommerce thành lead trên Nobita một cách nhanh chóng
+Hỗ trợ chuyển thông tin khi khách để lại thông tin trên Contact Form 7 , khách đặt hàng trên Woocommerce thành lead trên Nobi Pro một cách nhanh chóng
 
 == Installation ==
 
